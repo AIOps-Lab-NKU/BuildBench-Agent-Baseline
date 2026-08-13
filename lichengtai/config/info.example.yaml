@@ -1,0 +1,19 @@
+LLM_PROVIDER: qwen
+
+paths:
+  base_dir: "/path/to/case-input"
+  result_dir: "/path/to/run/agent-results"
+  log_dir: "/path/to/run/agent-logs"
+  temp_work_dir: "/path/to/run/agent-workspaces"
+
+build:
+  backend: docker
+  client_tool_timeout_seconds: 2400
+  docker:
+    validator_command: "/path/to/docker-validator/bin/build-case-docker"
+    result_root: "/path/to/run/docker-results"
+    staging_root: "/path/to/run/docker-staging"
+    case_map:
+      example-case: "/path/to/materialized-case"
+
+user: {}
