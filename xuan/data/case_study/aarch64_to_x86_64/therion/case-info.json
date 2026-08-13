@@ -1,0 +1,7 @@
+{
+  "case_id": "launchpad-focal-arm64-amd64-therion-fa197c85aff9",
+  "package_name": "therion",
+  "direction": "aarch64_to_x86_64",
+  "source_arch": "unknown",
+  "target_arch": "unknown"
+}

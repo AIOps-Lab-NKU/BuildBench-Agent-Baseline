@@ -1,0 +1,25 @@
+# Generated for Build-Bench Docker materialization.
+# Source: Launchpad Ubuntu noble-proposed arm64 current dependency fallback for libioth 0.1.2-2.
+Repotype: debian
+type: dsc
+buildengine: debootstrap
+
+Order: base-passwd:base-files
+ExpandFlags: preinstallexpand
+Preinstall: base-files base-passwd bash debianutils libc-bin apt gzip util-linux build-essential coreutils diffutils findutils sed mawk dash
+Preinstall: grep libc-bin libc6
+Preinstall: ncurses-base ncurses-bin
+Preinstall: libapparmor1 libaudit1 libcap-ng0 libgcc-s1
+Preinstall: libselinux1 libsystemd0 libtinfo6 libudev1 libzstd1
+VMinstall: binutils
+Required: ncurses-base libtool debhelper
+Required: libc6-dev
+Support: file gettext gettext-base m4 autoconf automake autopoint dh-autoreconf
+Support: dh-strip-nondeterminism po-debconf intltool-debian libarchive-zip-perl libdebhelper-perl libfile-stripnondeterminism-perl libsub-override-perl
+Prefer: mawk libjpeg-dev libncurses5-dev
+Prefer: build-essential:make
+
+Macros:
+%ubuntu_version 2004
+%ubuntu_codename focal
+%distribution Ubuntu

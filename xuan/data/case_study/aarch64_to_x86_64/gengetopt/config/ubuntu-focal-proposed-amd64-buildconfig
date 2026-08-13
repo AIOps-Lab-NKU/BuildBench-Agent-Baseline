@@ -1,0 +1,35 @@
+# Generated for Build-Bench Docker materialization.
+# Source: Launchpad Ubuntu noble-proposed amd64 current dependency fallback for libioth 0.1.2-2.
+Order: libpython3.8-minimal:python3.8-minimal
+Order: python3.8-minimal:python3.8
+Order: libpython3.8-stdlib:python3.8
+Order: python3.8-minimal:python3-minimal
+Order: python3.8:python3
+Order: python3-minimal:python3
+Repotype: debian
+type: dsc
+buildengine: debootstrap
+
+Order: base-passwd:base-files
+ExpandFlags: preinstallexpand
+Preinstall: base-files base-passwd bash bsdutils debianutils libc-bin mawk apt gzip util-linux findutils build-essential coreutils diffutils grep hostname init-system-helpers libpam-runtime mount sed dash perl libpython3.8-minimal python3.8-minimal python3-minimal python3
+Preinstall: grep libc-bin libc6
+Preinstall: login mawk ncurses-base ncurses-bin sysvinit-utils util-linux
+Preinstall: perl-base libapparmor1 libaudit1 libcap-ng0 libdb5.3 libdebconfclient0 libgcc-s1 libgpg-error0
+Preinstall: libattr1 libmount1 libpam0g libpcre2-8-0
+Preinstall: libselinux1 libsmartcols1 libsystemd0 libtinfo6 libudev1 libuuid1 libzstd1 zlib1g
+Preinstall: libp11-kit0
+VMinstall: binutils libblkid1 libuuid1 mount libmount1 libsmartcols1
+Required: mount ncurses-base libtool debhelper
+Required: libc6-dev
+Support: file gettext gettext-base perl procps ubuntu-keyring m4 autoconf
+Support: automake autopoint dh-autoreconf dh-strip-nondeterminism po-debconf intltool-debian libarchive-zip-perl libdebhelper-perl
+Support: libfile-stripnondeterminism-perl libsub-override-perl readline-common
+Support: perl-modules-5.30
+Prefer: mawk libjpeg-dev libncurses5-dev libfontconfig-dev libfreetype-dev libldap2-dev libtinfo-dev emacs node-acorn perl perl-base pkgconf lsb-base
+Prefer: build-essential:make
+
+Macros:
+%ubuntu_version 2004
+%ubuntu_codename focal
+%distribution Ubuntu

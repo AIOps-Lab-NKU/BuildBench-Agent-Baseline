@@ -1,0 +1,26 @@
+{
+  "case_id": "launchpad-focal-arm64-amd64-mod-gnutls-65757a3729c7",
+  "role": "target",
+  "ecosystem": "Ubuntu Launchpad",
+  "distribution": "Ubuntu",
+  "series": "focal",
+  "pocket": "Proposed",
+  "direction": "aarch64_to_x86_64",
+  "package_name": "mod-gnutls",
+  "source_version": "0.9.0-1.1",
+  "source_url": "https://launchpad.net/ubuntu/focal/+source/mod-gnutls/0.9.0-1.1",
+  "source_cache_path": "source-cache/ubuntu-launchpad/bb2d105bcde08fc0",
+  "source_log_path": "log-cache/original-platform/ubuntu-launchpad/fe84b130fcd2dc0e0c6b/buildlog_ubuntu-focal-arm64.mod-gnutls_0.9.0-1.1_BUILDING.txt.gz",
+  "target_log_path": "log-cache/original-platform/ubuntu-launchpad/a002ebe2d58828182023/buildlog_ubuntu-focal-amd64.mod-gnutls_0.9.0-1.1_BUILDING.txt.gz",
+  "draft_manifest": "manifest.draft.json",
+  "validator_ready": false,
+  "blocked_on": [
+    "config/buildconfig",
+    "dependencies/*.deb"
+  ],
+  "input_files": [
+    "mod-gnutls_0.9.0-1.1.dsc",
+    "mod-gnutls_0.9.0.orig.tar.bz2",
+    "mod-gnutls_0.9.0-1.1.debian.tar.xz"
+  ]
+}

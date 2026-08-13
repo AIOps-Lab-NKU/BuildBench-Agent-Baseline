@@ -1,0 +1,419 @@
+{
+  "case_id": "launchpad-focal-arm64-amd64-mod-gnutls-65757a3729c7",
+  "role": "target",
+  "series": "focal",
+  "strategy": "exact-deb-dependency-plan",
+  "archived_previous_dependencies": "docker/batch-inputs/verified-first/launchpad-focal-arm64-amd64-mod-gnutls-65757a3729c7/target/dependency-archives/plan-exact-20260726-001946",
+  "dependency_count": 294,
+  "deduped_dependency_count": 294,
+  "added_count": 294,
+  "missing_count": 0,
+  "missing": [],
+  "buildconfig_seed_added_count": 5,
+  "buildconfig_seed_added": [
+    {
+      "reason": "buildconfig_seed",
+      "package": "build-essential",
+      "filename": "build-essential_12.8ubuntu1_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "reason": "buildconfig_seed",
+      "package": "coreutils",
+      "filename": "coreutils_8.30-3ubuntu2_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "reason": "buildconfig_seed",
+      "package": "diffutils",
+      "filename": "diffutils_3.7-3_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "reason": "buildconfig_seed",
+      "package": "sed",
+      "filename": "sed_4.7-1_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "reason": "buildconfig_seed",
+      "package": "dash",
+      "filename": "dash_0.5.10.2-6_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    }
+  ],
+  "buildconfig_seed_unresolved_count": 0,
+  "buildconfig_seed_unresolved": [],
+  "dsc_seed_added_count": 2,
+  "dsc_seed_added": [
+    {
+      "reason": "dsc_seed",
+      "package": "dpkg-dev",
+      "filename": "dpkg-dev_1.19.7ubuntu3_all.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "reason": "dsc_seed",
+      "package": "markdown",
+      "filename": "markdown_1.0.1-10_all.deb",
+      "status": "store",
+      "suite": "focal"
+    }
+  ],
+  "dsc_seed_unresolved_count": 0,
+  "dsc_seed_unresolved": [],
+  "fixed_seed_added_count": 2,
+  "fixed_seed_added": [
+    {
+      "reason": "fixed_seed",
+      "package": "debootstrap",
+      "filename": "debootstrap_1.0.118ubuntu1_all.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "reason": "fixed_seed",
+      "package": "lsb-release",
+      "filename": "lsb-release_11.1.0ubuntu2_all.deb",
+      "status": "store",
+      "suite": "focal"
+    }
+  ],
+  "fixed_seed_unresolved_count": 0,
+  "fixed_seed_unresolved": [],
+  "resolver_added_count": 45,
+  "resolver_added": [
+    {
+      "package": "libpcre3",
+      "filename": "libpcre3_8.39-12build1_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "dpkg",
+      "filename": "dpkg_1.19.7ubuntu3_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "libdb5.3",
+      "filename": "libdb5.3_5.3.28+dfsg1-0.6ubuntu2_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "libgdbm-compat4",
+      "filename": "libgdbm-compat4_1.18.1-5_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "libgdbm6",
+      "filename": "libgdbm6_1.18.1-5_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "init-system-helpers",
+      "filename": "init-system-helpers_1.57_all.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "debconf",
+      "filename": "debconf_1.5.73_all.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "libargon2-1",
+      "filename": "libargon2-1_0~20171227-0.2_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "libidn2-0",
+      "filename": "libidn2-0_2.2.0-2_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "libunistring2",
+      "filename": "libunistring2_0.9.10-2_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "liblzma5",
+      "filename": "liblzma5_5.2.4-1_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "adduser",
+      "filename": "adduser_3.118ubuntu2_all.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "libmpc3",
+      "filename": "libmpc3_1.1.0-1_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "libmpfr6",
+      "filename": "libmpfr6_4.0.2-1_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "pinentry-curses",
+      "filename": "pinentry-curses_1.1.0-3build1_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "libnpth0",
+      "filename": "libnpth0_1.6-1_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "libdpkg-perl",
+      "filename": "libdpkg-perl_1.19.7ubuntu3_all.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "gcc",
+      "filename": "gcc_9.3.0-1ubuntu2_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "g++",
+      "filename": "g++_9.3.0-1ubuntu2_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "make",
+      "filename": "make_4.2.1-1.2_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "xz-utils",
+      "filename": "xz-utils_5.2.4-1_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "cpp",
+      "filename": "cpp_9.3.0-1ubuntu2_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "ca-certificates",
+      "filename": "ca-certificates_20190110ubuntu1_all.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "lockfile-progs",
+      "filename": "lockfile-progs_0.1.18_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "tar",
+      "filename": "tar_1.30+dfsg-7_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "patch",
+      "filename": "patch_2.7.6-6_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "wget",
+      "filename": "wget_1.20.3-1ubuntu1_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "python3",
+      "filename": "python3_3.8.2-0ubuntu2_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "distro-info-data",
+      "filename": "distro-info-data_0.43ubuntu1_all.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "gcc-9",
+      "filename": "gcc-9_9.3.0-10ubuntu2_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "g++-9",
+      "filename": "g++-9_9.3.0-10ubuntu2_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "cpp-9",
+      "filename": "cpp-9_9.3.0-10ubuntu2_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "python3-minimal",
+      "filename": "python3-minimal_3.8.2-0ubuntu2_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "python3.8",
+      "filename": "python3.8_3.8.2-1ubuntu1_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "libpython3-stdlib",
+      "filename": "libpython3-stdlib_3.8.2-0ubuntu2_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "gcc-9-base",
+      "filename": "gcc-9-base_9.3.0-10ubuntu2_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "libgcc-9-dev",
+      "filename": "libgcc-9-dev_9.3.0-10ubuntu2_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "libstdc++-9-dev",
+      "filename": "libstdc++-9-dev_9.3.0-10ubuntu2_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "python3.8-minimal",
+      "filename": "python3.8-minimal_3.8.2-1ubuntu1_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "libpython3.8-stdlib",
+      "filename": "libpython3.8-stdlib_3.8.2-1ubuntu1_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "mime-support",
+      "filename": "mime-support_3.64ubuntu1_all.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "libasan5",
+      "filename": "libasan5_9.3.0-10ubuntu2_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "libpython3.8-minimal",
+      "filename": "libpython3.8-minimal_3.8.2-1ubuntu1_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "libcrypt1",
+      "filename": "libcrypt1_4.4.10-10ubuntu4_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    },
+    {
+      "package": "libmpdec2",
+      "filename": "libmpdec2_2.4.2-3_amd64.deb",
+      "status": "store",
+      "suite": "focal"
+    }
+  ],
+  "resolver_unresolved_count": 0,
+  "resolver_unresolved": [],
+  "pruned_duplicate_count": 7,
+  "pruned_duplicates": [
+    {
+      "package": "libasan5",
+      "arch": "amd64",
+      "removed_version": "9.2.1-30ubuntu1",
+      "kept_version": "9.3.0-10ubuntu2",
+      "removed_file": "libasan5_9.2.1-30ubuntu1_amd64.deb"
+    },
+    {
+      "package": "g++-9",
+      "arch": "amd64",
+      "removed_version": "9.2.1-30ubuntu1",
+      "kept_version": "9.3.0-10ubuntu2",
+      "removed_file": "g++-9_9.2.1-30ubuntu1_amd64.deb"
+    },
+    {
+      "package": "gcc-9",
+      "arch": "amd64",
+      "removed_version": "9.2.1-30ubuntu1",
+      "kept_version": "9.3.0-10ubuntu2",
+      "removed_file": "gcc-9_9.2.1-30ubuntu1_amd64.deb"
+    },
+    {
+      "package": "libstdc++-9-dev",
+      "arch": "amd64",
+      "removed_version": "9.2.1-30ubuntu1",
+      "kept_version": "9.3.0-10ubuntu2",
+      "removed_file": "libstdc++-9-dev_9.2.1-30ubuntu1_amd64.deb"
+    },
+    {
+      "package": "libgcc-9-dev",
+      "arch": "amd64",
+      "removed_version": "9.2.1-30ubuntu1",
+      "kept_version": "9.3.0-10ubuntu2",
+      "removed_file": "libgcc-9-dev_9.2.1-30ubuntu1_amd64.deb"
+    },
+    {
+      "package": "cpp-9",
+      "arch": "amd64",
+      "removed_version": "9.2.1-30ubuntu1",
+      "kept_version": "9.3.0-10ubuntu2",
+      "removed_file": "cpp-9_9.2.1-30ubuntu1_amd64.deb"
+    },
+    {
+      "package": "gcc-9-base",
+      "arch": "amd64",
+      "removed_version": "9.2.1-30ubuntu1",
+      "kept_version": "9.3.0-10ubuntu2",
+      "removed_file": "gcc-9-base_9.2.1-30ubuntu1_amd64.deb"
+    }
+  ],
+  "updated_at_utc": "2026-07-26T00:20:56Z",
+  "note": "Dependencies are materialized from evidence/deb-dependency-plan.json using Launchpad primary files and local reuse."
+}
