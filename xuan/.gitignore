@@ -10,15 +10,4 @@ wheels/
 .venv
 .env
 
-# Local configuration and experiment outputs
-config/info.yaml
-result_log_res/
-result_text_res/
-run_records/
-temp_workspace/
-spec_workspace/
-data/**/logs/
-data/**/dependencies/
-data/**/input/
-
 .DS_Store

@@ -1,0 +1,29 @@
+LLM_PROVIDER: "qwen"
+
+paths:
+  base_dir: "data/case_study/x86_64_to_aarch64"
+  result_dir: "result_text_res"
+  temp_work_dir: "temp_workspace"
+  log_dir: "result_log_res"
+
+build:
+  backend: "docker"  # "docker" | "obs"
+  # 预构建：attempt 前先对原始 case 做一次 Docker 构建。
+  # - 构建成功 → case 本就不需要修复，跳过全部 LLM attempt（省 token）
+  # - 构建失败 → 失败日志写入 workspace/log_failed.txt，作为 attempt 1 的初始失败日志
+  # - case 自带失败日志（logs/docker-target-build.log）时自动跳过预构建
+  prebuild: true
+  docker:
+    validator_command: "/home/zhaochenyu/buildbench_competition/docker-validator/bin/build-case-docker"
+    case_store_dir: "/home/zhaochenyu/buildbench_competition/Build-bench-xuan/data/case_study/x86_64_to_aarch64"
+    result_root: "run_records/docker-builds"
+    staging_root: "temp_workspace/docker-cases"
+    case_map: {}
+
+user:
+  user_name: "lalala123"
+  password: "zhaochenyu921"
+  target_project: "home:lalala123:case_study"
+  repository_name: "arm"
+  architecture_name: "aarch64"
+  obs_api_url: "https://api.opensuse.org"

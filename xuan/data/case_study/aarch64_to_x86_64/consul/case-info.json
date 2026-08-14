@@ -1,7 +1,0 @@
-{
-  "case_id": "launchpad-focal-arm64-amd64-consul-0c3b6223e408",
-  "package_name": "consul",
-  "direction": "aarch64_to_x86_64",
-  "source_arch": "unknown",
-  "target_arch": "unknown"
-}

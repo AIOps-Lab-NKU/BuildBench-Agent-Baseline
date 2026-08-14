@@ -20,7 +20,6 @@ RULES:
 1. Valid JSON — parseable by `json.loads()`. No markdown ```json fences.
 2. `files` array must have >= 1 entry.
 3. Each `content` must be the COMPLETE file, not just changed lines.
-4. If no fix needed, output `{"files": [{"path": "README", "content": "No changes"}]}`.
 
 EXAMPLE (correct):
 {"files":[{"path":"extracted/texmath-0.13/texmath.cabal","content":"Name: texmath\nVersion: 0.13\n..."}]}
