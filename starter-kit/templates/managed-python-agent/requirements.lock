@@ -1,0 +1,3 @@
+# Add exact dependencies as package==version, one per line.
+# The official template uses only the Python standard library.
+

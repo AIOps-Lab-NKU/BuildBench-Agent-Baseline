@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  cat >&2 <<'EOF'
+usage: build-case-docker --input CASE_DIR --output OUTPUT_DIR [--patch PATCH]
+EOF
+}
+
+INPUT=""
+OUTPUT=""
+PATCH=""
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --input)
+      [[ $# -ge 2 ]] || { usage; exit 2; }
+      INPUT="$2"
+      shift 2
+      ;;
+    --output)
+      [[ $# -ge 2 ]] || { usage; exit 2; }
+      OUTPUT="$2"
+      shift 2
+      ;;
+    --patch)
+      [[ $# -ge 2 ]] || { usage; exit 2; }
+      PATCH="$2"
+      shift 2
+      ;;
+    -h|--help)
+      usage
+      exit 0
+      ;;
+    *)
+      printf 'unknown argument: %s\n' "$1" >&2
+      usage
+      exit 2
+      ;;
+  esac
+done
+
+[[ -n "$INPUT" && -n "$OUTPUT" ]] || { usage; exit 2; }
+[[ -d "$INPUT" ]] || { printf 'case not found: %s\n' "$INPUT" >&2; exit 2; }
+INPUT="$(realpath "$INPUT")"
+OUTPUT="$(realpath -m "$OUTPUT")"
+OUTPUT_PARENT="$(dirname "$OUTPUT")"
+mkdir -p "$OUTPUT_PARENT"
+
+if [[ -n "$PATCH" ]]; then
+  [[ -f "$PATCH" ]] || { printf 'patch not found: %s\n' "$PATCH" >&2; exit 2; }
+  PATCH="$(realpath "$PATCH")"
+fi
+
+TMP_ROOT="${BUILD_CASE_TMP_ROOT:-$OUTPUT_PARENT/.build-case-tmp}"
+mkdir -p "$TMP_ROOT"
+TMP_ROOT="$(realpath "$TMP_ROOT")"
+RUNTIME_IMAGE="${BUILD_CASE_RUNTIME_IMAGE:-buildbench-validator-runtime:v0}"
+CLEANUP_IMAGE="${BUILD_CASE_CLEANUP_IMAGE:-ubuntu:24.04}"
+SOCK_GID="$(stat -c '%g' /var/run/docker.sock)"
+
+DOCKER_ARGS=(
+  run --rm
+  --user "$(id -u):$(id -g)"
+  --group-add "$SOCK_GID"
+  -e HOME=/tmp
+  -e "TMPDIR=$TMP_ROOT"
+  -e "BUILD_CASE_CLEANUP_IMAGE=$CLEANUP_IMAGE"
+  -v /var/run/docker.sock:/var/run/docker.sock
+  -v "$INPUT:$INPUT:ro"
+  -v "$OUTPUT_PARENT:$OUTPUT_PARENT"
+)
+
+case "$TMP_ROOT/" in
+  "$OUTPUT_PARENT/"*) ;;
+  *) DOCKER_ARGS+=( -v "$TMP_ROOT:$TMP_ROOT" ) ;;
+esac
+
+VALIDATOR_ARGS=( --input "$INPUT" --output "$OUTPUT" )
+if [[ -n "$PATCH" ]]; then
+  case "$PATCH" in
+    "$INPUT"/*) ;;
+    *) DOCKER_ARGS+=( -v "$PATCH:$PATCH:ro" ) ;;
+  esac
+  VALIDATOR_ARGS+=( --patch "$PATCH" )
+fi
+
+exec docker "${DOCKER_ARGS[@]}" "$RUNTIME_IMAGE" "${VALIDATOR_ARGS[@]}"
+

@@ -1,0 +1,2 @@
+# Local Example Cases included in buildbench-example-assets:v0.
+hello
