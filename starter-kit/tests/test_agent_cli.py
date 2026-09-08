@@ -61,7 +61,7 @@ class AgentCliContractTests(unittest.TestCase):
     def test_dispatcher_reports_release_candidate_version(self) -> None:
         result = run_bb("version")
         self.assertEqual(result.returncode, 0)
-        self.assertEqual(result.stdout.strip(), "0.1.0-rc.2")
+        self.assertEqual(result.stdout.strip(), "0.1.0-rc.3")
 
 
 if __name__ == "__main__":
