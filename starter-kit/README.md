@@ -164,7 +164,14 @@ artifacts/           RPM/SRPM or other expected package artifacts
 
 ## Runtime images
 
-The Starter Kit uses organizer-provided runtime images. `./bb doctor` verifies that the required images are available before a run. If your organization uses a registry mirror, the image references can be overridden:
+The Starter Kit uses public organizer-provided runtime images. `./bb doctor` pulls any missing image and verifies that the required images are available before a run. Release `v0.1.0-rc.3` pins the participant-facing images by immutable multi-architecture manifest digest:
+
+```text
+ghcr.io/terriyyy/buildbench-validator-runtime@sha256:11151f88f6b12c578b9c9fafd0420d6da27c6969b5909aaa4c51e78dd9acd7c7
+ghcr.io/terriyyy/buildbench-example-assets@sha256:98bdf0f445cf0296f67ffc8b4601ab1cb1f82b957f84bd9739276f5659cdde54
+```
+
+No registry account is required to pull these public images. If your organization uses a registry mirror, the image references can be overridden:
 
 ```bash
 export BB_AGENT_IMAGE=<managed-python-image>
